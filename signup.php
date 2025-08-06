@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,60 +10,50 @@
 
     <!-- SweetAlert2 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="assets/css/signin.css">
 </head>
 
-<body style="background: linear-gradient(to right,rgb(142, 65, 197),rgb(75, 161, 231));">
+<body style="background-image: url('https://cdn.pixabay.com/photo/2021/11/15/11/00/barber-shop-6797761_1280.jpg'); background-size: cover; background-position: center;">
     <div class="container d-flex justify-content-center align-items-center" style="height: 100vh; max-width: 900px;">
-        <div class="card" style="width: 100%;">
+        <div class="card bg-secondary" style="width: 50%;">
             <div class="row g-0">
-                <div class="col-md-6">
-                    <div class="card-body p-4">
-                        <!-- เข้าสู่ระบบ -->
-                        <h2>Sign Up</h2>
-                        <form method="POST" action="controls/cUsers.php">
-                            <div class="mb-3">
-                                <label for="firstname" class="">Firstname</label>
-                                <input type="text" name="first_name" class="form-control" required>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="">Lastname</label>
-                                <input type="text" name="last_name" class="form-control" required>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="">Address</label>
-                                <textarea name="address" id="" class="form-control" required></textarea>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="">Phone</label>
-                                <input type="text" name="phone" class="form-control" required>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="">E-Mail</label>
-                                <input type="email" name="email" class="form-control" required>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="">Password</label>
-                                <input type="text" name="password" class="form-control" required>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary w-100">SignUp NOW!!</button>
-
-                        </form>
-                        <!-- กลับไปหน้าเข้าสู่ระบบ -->
-                        <div class="text-center mt-3">
-                            <span>Already have an account?</span>
-                            <a href="signin.php">Sign In</a>
+                <div class="card-body p-4">
+                    <!-- เข้าสู่ระบบ -->
+                    <h2 class="text-center">สมัครสมาชิก</h2>
+                    <form method="POST" action="controls/createUsers.php">
+                        <div class="mb-3">
+                            <label for="firstname" class="">ชื่อ</label>
+                            <input type="text" name="first_name" class="form-control" required>
                         </div>
+
+                        <div class="mb-3">
+                            <label for="">นามสกุล</label>
+                            <input type="text" name="last_name" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="">เบอร์โทรศัพท์</label>
+                            <input type="text" name="phone" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="">อีเมลล์</label>
+                            <input type="email" name="email" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="">รหัสผ่าน</label>
+                            <input type="text" name="password" class="form-control" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-dark w-100 text-white">สมัครสมาชิก</button>
+
+                    </form>
+                    <!-- กลับไปหน้าเข้าสู่ระบบ -->
+                    <div class="text-center mt-3">
+                        <span>ถ้ายังไม่มีสมาชิก</span>
+                        <a href="signin.php" class="text-white">คลิก!!</a>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <img src="assets/imgs/sea1.jpg" class="img-fluid" style="object-fit: cover; width: 100%; height: 100%"
-                        alt="Robux gif">
                 </div>
             </div>
         </div>
