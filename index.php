@@ -5,7 +5,6 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -83,14 +82,14 @@ if (!isset($_SESSION['user_id'])) {
             <p>โชคพิทักษ์ Big boss Barber</p>
         </div>
     </section>
-        <?php include 'components/header.php' ?>
+        <?php include './components/header.php'; ?>
     <script>
         <?php if (isset($_GET['success']) && $_GET['success'] == 'true') : ?>
             Swal.fire({
                 icon: 'success',
-                title: 'Success!',
-                text: 'You have signed in successfully!',
-                footer: 'Go Away Teen'
+                title: 'สำเร็จ!',
+                text: 'คุณเข้าสู่ระบบสำเร็จ',
+                footer: 'ได้เวลาเริ่มต้นใช้งาน'
             });
         <?php endif; ?>
     </script>
