@@ -141,5 +141,6 @@ if (empty($branch)) {
             locale: "th"
         });
     </script>
+    <?php include './components/footer.php'; ?>
 </body>
 </html>
