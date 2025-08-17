@@ -26,7 +26,7 @@ if (!isset($_SESSION['user_id'])) {
         }
 
         h1 {
-            font-size: 50px;
+            font-size: 65px;
             font-weight: bold;
             color: white;
         }
@@ -113,7 +113,7 @@ if (!isset($_SESSION['user_id'])) {
         alt="Logo"
         class="logo mb-3">
     <section class="hero text-white text-left py-5">
-        <h1 class="text-white">บริการของเรา</h1>
+        <h1>บริการของเรา</h1>
     <table>
         <tbody class="bg-dark">
             <tr>
@@ -134,5 +134,6 @@ if (!isset($_SESSION['user_id'])) {
         </tbody>
     </table>
     </section>
+    <?php include './components/footer.php'; ?>
 </body>
 </html>
