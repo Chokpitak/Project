@@ -107,7 +107,7 @@ $result = $conn->query($sql);
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://i.pinimg.com/1200x/05/33/41/0533412dc9211773e91d283833a252af.jpg');
+            background-image: url('https://i.pinimg.com/736x/71/2e/f6/712ef6b087f64f3d7f7ea8d5735b6795.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -159,9 +159,10 @@ $result = $conn->query($sql);
             </tbody>
         </table>
     </main>
+    <?php include './components/footer.php'; ?>
 </body>
 </html>
-
+_
 <?php
 $conn->close();
 ?>
