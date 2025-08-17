@@ -6,10 +6,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 ?>
 <?php
-// เริ่ม session ถ้าจะใช้เก็บค่าชั่วคราว
 session_start();
-
-// ตรวจสอบว่าฟอร์มถูกส่งมาหรือไม่
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     echo "<script>
         window.location.href = 'index.php';
@@ -17,14 +14,12 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     exit;
 }
 
-// รับค่าจากฟอร์ม
 $branch   = $_POST['branch'] ?? '';
 $fullname = trim($_POST['fullname'] ?? '');
 $phone    = trim($_POST['phone'] ?? '');
 $date     = $_POST['date'] ?? '';
 $time     = $_POST['time'] ?? '';
 
-// ตรวจสอบว่าสาขาอยู่ในรายการที่อนุญาต
 $allowedBranches = ['หัวกรวยสาขาสามแยกกระจับ', 'หัวกรวยสาขามาลัยแมน', 'หัวกรวยสาขาต้นสน'];
 
 if (!in_array($branch, $allowedBranches)) {
@@ -32,20 +27,17 @@ if (!in_array($branch, $allowedBranches)) {
     exit;
 }
 
-// ตรวจสอบว่ากรอกครบทุกช่อง
 if (empty($fullname) || empty($phone) || empty($date) || empty($time)) {
     showAlertAndRedirect("กรุณากรอกข้อมูลให้ครบถ้วน", "warning");
     exit;
 }
 
-// ตรวจสอบว่าเป็นวันที่ปัจจุบันหรืออนาคต
 $currentDate = date('Y-m-d');
 if ($date < $currentDate) {
     showAlertAndRedirect("วันที่จองต้องเป็นวันนี้หรืออนาคตเท่านั้น", "warning");
     exit;
 }
 
-// ถ้าเลือกวันที่วันนี้ → ตรวจสอบว่าเวลาจองอยู่ในอนาคต (เทียบกับเวลาปัจจุบัน)
 if ($date === $currentDate) {
     $currentTime = date('H:i');
     if ($time <= $currentTime) {
@@ -54,17 +46,15 @@ if ($date === $currentDate) {
     }
 }
 
-// ตรวจสอบรูปแบบเบอร์โทร (ไทย 10 หลัก)
 if (!preg_match('/^[0-9]{10}$/', $phone)) {
     showAlertAndRedirect("กรุณากรอกเบอร์โทรให้ถูกต้อง (10 หลัก)", "warning");
     exit;
 }
 
-// เชื่อมต่อฐานข้อมูล
 $servername = "localhost";
-$username = "root";          // แก้ตามของคุณ
-$password = "";              // แก้ตามของคุณ
-$dbname   = "barber_db";     // แก้ตามของคุณ
+$username = "root";
+$password = "";
+$dbname   = "barber_db";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
@@ -72,7 +62,6 @@ if ($conn->connect_error) {
     exit;
 }
 
-// เตรียมคำสั่ง SQL แบบ prepared statement เพื่อป้องกัน SQL injection
 $stmt = $conn->prepare("INSERT INTO reservations (branch, fullname, phone, date, time) VALUES (?, ?, ?, ?, ?)");
 $stmt->bind_param("sssss", $branch, $fullname, $phone, $date, $time);
 
@@ -84,13 +73,8 @@ if (!$stmt->execute()) {
 $stmt->close();
 $conn->close();
 
-
-// ✅ ถ้าทุกอย่างถูกต้อง —> แสดงแจ้งเตือนสำเร็จ
 showAlertAndRedirect("จองคิวสำเร็จ", "success", "index.php");
 
-// หรือถ้ามีฐานข้อมูล → ใส่โค้ด INSERT ที่นี่
-
-// ---------- ฟังก์ชันช่วยแสดง Alert ----------
 function showAlertAndRedirect($message, $icon = "success", $redirect = "reservation2.php") {
     echo <<<HTML
     <!DOCTYPE html>
