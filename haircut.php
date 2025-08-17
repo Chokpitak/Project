@@ -26,9 +26,9 @@ if (!isset($_SESSION['user_id'])) {
         }
 
         h1 {
-            font-size: 50px;
+            font-size: 65px;
             font-weight: bold;
-            color: black;
+            color: white;
         }
 
         .product-container {
@@ -106,7 +106,7 @@ if (!isset($_SESSION['user_id'])) {
         alt="Logo"
         class="logo mb-3">
     <section class="hero text-white text-left py-5">
-        <h1 class="text-white">ทรงผมยอดฮิต</h1>
+        <h1>ทรงผมยอดฮิต</h1>
         <div class="product-container">
             <div class="product">
                 <img src="https://i.pinimg.com/736x/c0/78/ca/c078ca742def4d8f1581fb6e7e928ae9.jpg" alt="Product 1">
@@ -153,6 +153,6 @@ if (!isset($_SESSION['user_id'])) {
             </div>
         </div>
     </section>
-
+    <?php include './components/footer.php'; ?>
 </body>
 </html>
