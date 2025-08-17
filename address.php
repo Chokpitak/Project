@@ -152,5 +152,6 @@ if (!isset($_SESSION['user_id'])) {
                 </tbody>
             </table>
         </main>
+    <?php include './components/footer.php'; ?>
 </body>
 </html>
