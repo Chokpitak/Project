@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: signin.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +26,7 @@
         }
 
         h1 {
-            font-size: 50px;
+            font-size: 65px;
             font-weight: bold;
             color: white;
         }
@@ -58,6 +65,12 @@
             border-radius: 8px;
         }
 
+        .btn-light:hover {
+            background-color: #f8f9fa;
+            transform: scale(1.05);
+            transition: all 0.2s ease-in-out;
+        }
+
         .btn-delete:hover {
             opacity: 0.8;
         }
@@ -94,33 +107,33 @@
     }
 </style>
 
-
 <body class="bg-dark">
     <?php include './components/header.php'; ?>
     <img src="https://cdn.pixabay.com/photo/2018/01/09/14/24/head-3071690_1280.png"
         alt="Logo"
         class="logo mb-3">
     <section class="hero text-white text-left py-5">
-        <h1 class="text-white">บริการของเรา</h1>
+        <h1>บริการของเรา</h1>
     <table>
         <tbody class="bg-dark">
             <tr>
                 <td><img src="https://tse3.mm.bing.net/th/id/OIP.fiNpFCdJGgj7TrwjKeslSQHaFt?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Profile"></td>
                 <td>หัวกรวยสาขาสามแยกกระจับ</td>
-                <td><a href="reservation2.php"><button class="btn btn-light">จองเลย</button></a></td>
+                <td><a href="reservation2.php?branch=หัวกรวยสาขาสามแยกกระจับ"><button class="btn btn-light">จองเลย</button></a></td>
             </tr>
             <tr>
                 <td><img src="https://tse2.mm.bing.net/th/id/OIP.wXvnTNRyJMispbUN7TWI1QAAAA?w=404&h=316&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Profile"></td>
                 <td>หัวกรวยสาขามาลัยแมน</td>
-                <td><a href="reservation2.php"><button class="btn btn-light">จองเลย</button></a></td>
+                <td><a href="reservation2.php?branch=หัวกรวยสาขามาลัยแมน"><button class="btn btn-light">จองเลย</button></a></td>
             </tr>
             <tr>
                 <td><img src="https://tse2.mm.bing.net/th/id/OIP.FyVXGI_P4VAQhppQzAwnUgHaHa?w=1920&h=1920&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Profile"></td>
                 <td>หัวกรวยสาขาต้นสน</td>
-                <td><a href="reservation2.php"><button class="btn btn-light">จองเลย</button></a></td>
+                <td><a href="reservation2.php?branch=หัวกรวยสาขาต้นสน"><button class="btn btn-light">จองเลย</button></a></td>
             </tr>
         </tbody>
     </table>
     </section>
+    <?php include './components/footer.php'; ?>
 </body>
 </html>

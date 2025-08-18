@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: signin.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,7 +62,7 @@
         th {
             background-color: #000;
             color: white;
-            font-size: 25px;
+            font-size: 30px;
         }
 
         td img {
@@ -145,5 +152,6 @@
                 </tbody>
             </table>
         </main>
+    <?php include './components/footer.php'; ?>
 </body>
 </html>
