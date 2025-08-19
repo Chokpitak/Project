@@ -49,7 +49,7 @@
                         <span class="icon"><i class="bi bi-person-plus-fill"></i></span>
                         เข้าสู่ระบบ
                     </h2>
-                    <form method="POST" action="controls/cUser.php">
+                    <form method="POST" action="controls/signinUsers.php">
                         <div class="mb-3">
                             <label for="email" class="form-label">อีเมลล์</label>
                             <div class="input-group">
@@ -78,6 +78,25 @@
     </div>
     <!-- Bootstrap Icons CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+     <script>
+    <?php if(isset($_GET['error']) && $_GET ['error'] == 'invalid') : ?>
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Invalid email or password',
+        footer: 'Please ry again.'
+    });
+    <?php endif; ?>
+
+    <?php if(isset($_GET['Success']) && $_GET ['Success'] == 'true') : ?>
+    Swal.fire({
+        icon: 'success',
+        title: 'Success!..',
+        text: 'You have signed in successfully!',
+        footer: 'Go Away Teen.'
+    });
+    <?php endif; ?>
+    </script>
 </body>
 
 </html>
