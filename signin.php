@@ -49,7 +49,7 @@
                         <span class="icon"><i class="bi bi-person-plus-fill"></i></span>
                         เข้าสู่ระบบ
                     </h2>
-                    <form method="POST" action="controls/createUsers.php">
+                    <form method="POST" action="controls/cUser.php">
                         <div class="mb-3">
                             <label for="email" class="form-label">อีเมลล์</label>
                             <div class="input-group">

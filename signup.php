@@ -51,7 +51,7 @@
                         <span class="icon"><i class="bi bi-person-plus-fill"></i></span>
                         สมัครสมาชิก
                     </h2>
-                    <form method="POST" action="controls/createUsers.php">
+                    <form method="POST" action="controls/cUser.php">
                         <div class="mb-3">
                             <label for="firstname" class="form-label">ชื่อ</label>
                             <div class="input-group">
