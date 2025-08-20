@@ -24,6 +24,14 @@
             background: rgba(60, 60, 60, 0.85) !important;
         }
 
+        .form-label {
+            font-weight: 500;
+        }
+
+        .bg-secondary {
+            background: rgba(60, 60, 60, 0.85) !important;
+        }
+
         .btn-dark {
             font-size: 1.1rem;
             font-weight: 500;
@@ -34,6 +42,10 @@
             background: #212529;
             color: #fff;
             border: none;
+        }
+
+        .form-control:focus {
+            box-shadow: 0 0 0 0.2rem #21252933;
         }
 
         .form-control:focus {
@@ -56,28 +68,29 @@
                         เข้าสู่ระบบ
                     </h2>
                     <form method="POST" action="controls/signinUser.php">
-                        <div class="mb-3">
-                            <label for="email" class="form-label">อีเมลล์</label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
-                                <input type="email" name="email" class="form-control" required>
+                        <form method="POST" action="controls/signinUser.php">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">อีเมลล์</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                    <input type="email" name="email" class="form-control" required>
+                                </div>
                             </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">รหัสผ่าน</label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="bi bi-lock"></i></span>
-                                <input type="password" name="pass" class="form-control" required>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">รหัสผ่าน</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                                    <input type="password" name="pass" class="form-control" required>
+                                </div>
                             </div>
+                            <button type="submit" class="btn btn-dark w-100 text-white mt-3">
+                                <i class="bi bi-person-plus"></i> เข้าสู่ระบบ
+                            </button>
+                        </form>
+                        <div class="text-center mt-4">
+                            <span>ยังไม่มีบัญชี?</span>
+                            <a href="signup.php" class="text-warning text-decoration-underline">สมัครสมาชิก</a>
                         </div>
-                        <button type="submit" class="btn btn-dark w-100 text-white mt-3">
-                            <i class="bi bi-person-plus"></i> เข้าสู่ระบบ
-                        </button>
-                    </form>
-                    <div class="text-center mt-4">
-                        <span>ยังไม่มีบัญชี?</span>
-                        <a href="signup.php" class="text-warning text-decoration-underline">สมัครสมาชิก</a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -123,6 +136,25 @@
         });
     </script>
 <?php endif; ?>
+<script>
+    <?php if (isset($_GET['error']) && $_GET['error'] == 'invalid') : ?>
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Invalid email or password',
+            footer: 'Please ry again.'
+        });
+    <?php endif; ?>
+
+    <?php if (isset($_GET['Success']) && $_GET['Success'] == 'true') : ?>
+        Swal.fire({
+            icon: 'success',
+            title: 'Success!..',
+            text: 'You have signed in successfully!',
+            footer: 'Go Away Teen.'
+        });
+    <?php endif; ?>
+</script>
 </body>
 
 </html>
