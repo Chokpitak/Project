@@ -39,6 +39,7 @@
         <li class="nav-item"><a class="nav-link text-white" href="./haircut.php">ทรงผมยอดฮิต</a></li>
         <li class="nav-item"><a class="nav-link text-white" href="./address.php">ที่อยู่</a></li>
         <li class="nav-item"><a class="nav-link text-white" href="#">เกี่ยวกับเรา</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="controls/signout.php">ออกจากระบบ</a></li>
       </ul>
     </div>
     </div>

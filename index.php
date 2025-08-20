@@ -5,6 +5,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -82,16 +83,41 @@ if (!isset($_SESSION['user_id'])) {
             <p>โชคพิทักษ์ Big boss Barber</p>
         </div>
     </section>
-        <?php include './components/header.php'; ?>
+    <?php include './components/header.php'; ?>
     <script>
+        <?php if (isset($_GET['error']) && $_GET['error'] == 'invalid') : ?>
+            Swal.fire({
+                icon: 'error',
+                title: 'เข้าสู่ระบบไม่สำเร็จ',
+                text: 'อีเมลหรือรหัสผ่านไม่ถูกต้อง กรุณาลองใหม่อีกครั้ง',
+                showConfirmButton: true,
+                confirmButtonColor: '#d33',
+                confirmButtonText: 'ตกลง',
+                background: '#212529',
+                color: '#fff',
+                footer: '<a href="signin.php" style="color:#ffc107;">กลับไปหน้าเข้าสู่ระบบ</a>',
+                customClass: {
+                    popup: 'rounded-4 shadow'
+                }
+            });
+        <?php endif; ?>
+
         <?php if (isset($_GET['success']) && $_GET['success'] == 'true') : ?>
             Swal.fire({
                 icon: 'success',
-                title: 'สำเร็จ!',
-                text: 'คุณเข้าสู่ระบบสำเร็จ',
-                footer: 'ได้เวลาเริ่มต้นใช้งาน'
+                title: 'เข้าสู่ระบบสำเร็จ!',
+                text: 'ยินดีต้อนรับสู่เว็บไซต์ของเรา',
+                showConfirmButton: false,
+                timer: 2000,
+                background: '#212529',
+                color: '#fff',
+                footer: '<span style="color:#ffc107;">ขอให้สนุกกับการใช้งาน!</span>',
+                customClass: {
+                    popup: 'rounded-4 shadow'
+                }
             });
         <?php endif; ?>
     </script>
 </body>
+
 </html>
