@@ -7,11 +7,6 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-$branch = $_GET['branch'] ?? '';
-if (empty($branch)) {
-    header("Location: services.php");
-    exit();
-}
 ?>
 
 <!DOCTYPE html>

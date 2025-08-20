@@ -13,6 +13,51 @@
     <style>
         .card {
             border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .form-label {
+            font-weight: 500;
+        }
+
+        .bg-secondary {
+            background: rgba(60, 60, 60, 0.85);
+        }
+
+        .form-label {
+            font-weight: 500;
+        }
+
+        .bg-secondary {
+            background: rgba(60, 60, 60, 0.85);
+        }
+
+        .btn-dark {
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .input-group-text {
+            background: #212529;
+            color: #fff;
+            border: none;
+        }
+
+        .form-control:focus {
+            box-shadow: 0 0 0 0.2rem #21252933;
+        }
+
+        .form-control:focus {
+            box-shadow: 0 0 0 0.2rem #21252933;
+        }
+
+        .icon {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+
             box-shadow: 0 4px 24px rgba(0,0,0,0.15);
         }
         .form-label {
@@ -49,6 +94,30 @@
                         <span class="icon"><i class="bi bi-person-plus-fill"></i></span>
                         เข้าสู่ระบบ
                     </h2>
+                    <form method="POST" action="controls/signinUser.php">
+                        <form method="POST" action="controls/signinUser.php">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">อีเมลล์</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                    <input type="email" name="email" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">รหัสผ่าน</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                                    <input type="password" name="pass" class="form-control" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-dark w-100 text-white mt-3">
+                                <i class="bi bi-person-plus"></i> เข้าสู่ระบบ
+                            </button>
+                        </form>
+                        <div class="text-center mt-4">
+                            <span>ยังไม่มีบัญชี?</span>
+                            <a href="signup.php" class="text-warning text-decoration-underline">สมัครสมาชิก</a>
+                        </div>
                     <form method="POST" action="controls/signinUsers.php">
                         <div class="mb-3">
                             <label for="email" class="form-label">อีเมลล์</label>
@@ -78,6 +147,64 @@
     </div>
     <!-- Bootstrap Icons CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script>
+        <?php
+        if (isset($_GET['error']) && $_GET['error'] == 'invalid') : ?>
+                <
+                script >
+                Swal.fire({
+                    icon: 'error',
+                    title: 'เข้าสู่ระบบไม่สำเร็จ',
+                    text: 'อีเมลหรือรหัสผ่านไม่ถูกต้อง กรุณาลองใหม่อีกครั้ง',
+                    showConfirmButton: true,
+                    confirmButtonColor: '#d33',
+                    confirmButtonText: 'ตกลง',
+                    background: '#212529',
+                    color: '#fff',
+                    footer: '<a href="signin.php" style="color:#ffc107;">กลับไปหน้าเข้าสู่ระบบ</a>',
+                    customClass: {
+                        popup: 'rounded-4 shadow'
+                    }
+                });
+    </script>
+<?php endif; ?>
+
+<?php if (isset($_GET['success']) && $_GET['success'] == 'true') : ?>
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'เข้าสู่ระบบสำเร็จ!',
+            text: 'ยินดีต้อนรับสู่เว็บไซต์ของเรา',
+            showConfirmButton: false,
+            timer: 2000,
+            background: '#212529',
+            color: '#fff',
+            footer: '<span style="color:#ffc107;">ขอให้สนุกกับการใช้งาน!</span>',
+            customClass: {
+                popup: 'rounded-4 shadow'
+            }
+        });
+    </script>
+<?php endif; ?>
+<script>
+    <?php if (isset($_GET['error']) && $_GET['error'] == 'invalid') : ?>
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Invalid email or password',
+            footer: 'Please ry again.'
+        });
+    <?php endif; ?>
+
+    <?php if (isset($_GET['Success']) && $_GET['Success'] == 'true') : ?>
+        Swal.fire({
+            icon: 'success',
+            title: 'Success!..',
+            text: 'You have signed in successfully!',
+            footer: 'Go Away Teen.'
+        });
+    <?php endif; ?>
+</script>
      <script>
     <?php if(isset($_GET['error']) && $_GET ['error'] == 'invalid') : ?>
     Swal.fire({
