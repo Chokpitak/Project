@@ -85,24 +85,44 @@
     <!-- Bootstrap Icons CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script>
-        <?php if (isset($_GET['error']) && $_GET['error'] == 'invalid') : ?>
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Invalid email or password',
-                footer: 'Please ry again.'
-            });
-        <?php endif; ?>
-
-        <?php if (isset($_GET['Success']) && $_GET['Success'] == 'true') : ?>
-            Swal.fire({
-                icon: 'success',
-                title: 'Success!..',
-                text: 'You have signed in successfully!',
-                footer: 'Go Away Teen.'
-            });
-        <?php endif; ?>
+        <?php
+        if (isset($_GET['error']) && $_GET['error'] == 'invalid') : ?>
+                <
+                script >
+                Swal.fire({
+                    icon: 'error',
+                    title: 'เข้าสู่ระบบไม่สำเร็จ',
+                    text: 'อีเมลหรือรหัสผ่านไม่ถูกต้อง กรุณาลองใหม่อีกครั้ง',
+                    showConfirmButton: true,
+                    confirmButtonColor: '#d33',
+                    confirmButtonText: 'ตกลง',
+                    background: '#212529',
+                    color: '#fff',
+                    footer: '<a href="signin.php" style="color:#ffc107;">กลับไปหน้าเข้าสู่ระบบ</a>',
+                    customClass: {
+                        popup: 'rounded-4 shadow'
+                    }
+                });
     </script>
+<?php endif; ?>
+
+<?php if (isset($_GET['success']) && $_GET['success'] == 'true') : ?>
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'เข้าสู่ระบบสำเร็จ!',
+            text: 'ยินดีต้อนรับสู่เว็บไซต์ของเรา',
+            showConfirmButton: false,
+            timer: 2000,
+            background: '#212529',
+            color: '#fff',
+            footer: '<span style="color:#ffc107;">ขอให้สนุกกับการใช้งาน!</span>',
+            customClass: {
+                popup: 'rounded-4 shadow'
+            }
+        });
+    </script>
+<?php endif; ?>
 </body>
 
 </html>
