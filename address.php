@@ -15,6 +15,7 @@ if (!isset($_SESSION['user_id'])) {
     <!-- Bootstrap 5 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- SweetAlert2 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -48,6 +49,7 @@ if (!isset($_SESSION['user_id'])) {
         table {
             width: 100%;
             border-collapse: collapse;
+            box-shadow: 0 0px 20px rgba(156, 152, 152, 1);
         }
 
         th, td {
@@ -110,10 +112,10 @@ if (!isset($_SESSION['user_id'])) {
         alt="Logo"
         class="logo mb-3">
       </div>  
-  <h1>สาขา ร้านตัดผมชาย โชคพิทักษ์ bigboss</h1>
+  <h1>Big Boss Barber</h1>
   <h2>ติดต่อได้ที่</h2>
-  <p>ร้านตัดผมชาย Gus สาขา Pes</p>
-  <p>1/456 ม.1 ต.kuy อ.kuy2 จ.kuy3 123456</p>
+  <p>สาขาสำนักงานใหญ่ สามแยกกระจับ</p>
+  <p>223/2 ม.14 ต.หนองอ้อ อ.บ้านโป่ง จ.ราชบุรี 70110</p>
   <p>โทร   063 867 1888</p>
 
         <main class="p-4 flex-grow-1">
@@ -131,26 +133,27 @@ if (!isset($_SESSION['user_id'])) {
                     <tr>
                         <td>1</td>
                         <td><img src="https://tse3.mm.bing.net/th/id/OIP.fiNpFCdJGgj7TrwjKeslSQHaFt?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Profile"></td>
-                        <td>หัวกรวยสาขาสามแยกกระจับ</td>
+                        <td>Big Boss สาขาสามแยกกระจับ</td>
                         <td>223/2 ม.14 ต.หนองอ้อ อ.บ้านโป่ง จ.ราชบุรี 70110</td>
                         <td>092 343 8810</td>
                     </tr>
                     <tr>
                         <td>2</td>
                         <td><img src="https://tse2.mm.bing.net/th/id/OIP.wXvnTNRyJMispbUN7TWI1QAAAA?w=404&h=316&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Profile"></td>
-                        <td>หัวกรวยสาขามาลัยแมน</td>
+                        <td>Big Boss สาขามาลัยแมน</td>
                         <td>17/1 ถนนมาลัยแมน ต.ลำพยา อ.เมืองนครปฐม จ.นครปฐม 73000</td>
                         <td>092 343 9548</td>
                     </tr>
                     <tr>
                         <td>3</td>
                         <td><img src="https://tse2.mm.bing.net/th/id/OIP.FyVXGI_P4VAQhppQzAwnUgHaHa?w=1920&h=1920&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Profile"></td>
-                        <td>หัวกรวยสาขาต้นสน</td>
+                        <td>Big Boss สาขาต้นสน</td>
                         <td>33 ถ.ราชดำเนิน ต.พระปฐมเจดีย์ อ.เมืองนครปฐม จ.นครปฐม 73000</td>
                         <td>063 887 2719</td>
                     </tr>
                 </tbody>
             </table>
+        <br><br>
         </main>
     <?php include './components/footer.php'; ?>
 </body>
