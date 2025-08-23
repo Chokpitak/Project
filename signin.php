@@ -10,18 +10,13 @@
     <!-- SweetAlert2 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="assets/css/signin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         .card {
             border-radius: 20px;
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
-        }
-
-        .form-label {
-            font-weight: 500;
-        }
-
-        .bg-secondary {
-            background: rgba(60, 60, 60, 0.85) !important;
         }
 
         .form-label {
@@ -48,12 +43,12 @@
             box-shadow: 0 0 0 0.2rem #21252933;
         }
 
-        .form-control:focus {
-            box-shadow: 0 0 0 0.2rem #21252933;
-        }
-
         .icon {
             margin-right: 8px;
+        }
+
+        body {
+            font-family: "Mitr", sans-serif;
         }
     </style>
 </head>
@@ -156,5 +151,4 @@
     <?php endif; ?>
 </script>
 </body>
-
 </html>
