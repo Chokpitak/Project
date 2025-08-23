@@ -36,6 +36,7 @@ $result = $conn->query($sql);
     <!-- Bootstrap 5 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- SweetAlert2 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -69,6 +70,7 @@ $result = $conn->query($sql);
         table {
             width: 100%;
             border-collapse: collapse;
+            box-shadow: 0 0px 20px rgba(156, 152, 152, 1);
         }
 
         th, td {
