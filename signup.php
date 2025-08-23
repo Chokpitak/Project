@@ -12,6 +12,9 @@
     <!-- SweetAlert2 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="assets/css/signin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         .card {
             border-radius: 20px;
@@ -38,6 +41,10 @@
         }
         .icon {
             margin-right: 8px;
+        }
+
+        body{
+            font-family: "Mitr", sans-serif;
         }
     </style>
 </head>
@@ -100,5 +107,4 @@
         </div>
     </div>
 </body>
-
 </html>
