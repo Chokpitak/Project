@@ -4,9 +4,7 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: signin.php");
     exit();
 }
-?>
-<?php
-session_start();
+
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     echo "<script>
         window.location.href = 'index.php';
@@ -20,7 +18,7 @@ $phone    = trim($_POST['phone'] ?? '');
 $date     = $_POST['date'] ?? '';
 $time     = $_POST['time'] ?? '';
 
-$allowedBranches = ['หัวกรวยสาขาสามแยกกระจับ', 'หัวกรวยสาขามาลัยแมน', 'หัวกรวยสาขาต้นสน'];
+$allowedBranches = ['Big Boss สาขาสามแยกกระจับ', 'Big Boss สาขามาลัยแมน', 'Big Boss สาขาต้นสน'];
 
 if (!in_array($branch, $allowedBranches)) {
     showAlertAndRedirect("ไม่พบสาขาที่เลือก", "error");
@@ -62,6 +60,21 @@ if ($conn->connect_error) {
     exit;
 }
 
+$stmt_check = $conn->prepare("SELECT id FROM reservations WHERE branch = ? AND date = ? AND time = ?");
+$stmt_check->bind_param("sss", $branch, $date, $time);
+$stmt_check->execute();
+$stmt_check->store_result();
+
+if ($stmt_check->num_rows > 0) {
+    $stmt_check->close();
+    $conn->close();
+    $redirect_url = "reservation2.php?branch=" . urlencode($branch);
+    showAlertAndRedirect("ขออภัย! เวลานี้ถูกจองไปแล้ว กรุณาเลือกเวลาอื่น", "warning", $redirect_url);
+    exit;
+}
+
+$stmt_check->close();
+
 $stmt = $conn->prepare("INSERT INTO reservations (branch, fullname, phone, date, time) VALUES (?, ?, ?, ?, ?)");
 $stmt->bind_param("sssss", $branch, $fullname, $phone, $date, $time);
 
@@ -74,6 +87,7 @@ $stmt->close();
 $conn->close();
 
 showAlertAndRedirect("จองคิวสำเร็จ", "success", "index.php");
+
 
 function showAlertAndRedirect($message, $icon = "success", $redirect = "reservation2.php") {
     echo <<<HTML
@@ -148,10 +162,10 @@ function showAlertAndRedirect($message, $icon = "success", $redirect = "reservat
     <section class="hero text-white text-center py-5 ">
         <div class="container h-100 d-flex flex-column  ">
             <h1>ยินดีตอนรับสู่เว็บไซต์ของเรา</h1>
-            <p>โชคพิทักษ์ Big boss Barber</p>
+            <p>Big Boss Barber</p>
+            
         </div>
     </section>
-        <?php include './components/header.php'; ?>
     <script>
             Swal.fire({
                 title: '{$message}',
@@ -167,3 +181,4 @@ function showAlertAndRedirect($message, $icon = "success", $redirect = "reservat
 HTML;
 }
 ?>
+<?php include './components/header.php'; ?>
