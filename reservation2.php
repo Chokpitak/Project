@@ -7,6 +7,13 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
+if (!isset($_GET['branch'])) {
+    header("Location: reservation1.php");
+    exit();
+}
+
+$branch = $_GET['branch'];
+
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +27,7 @@ if (!isset($_SESSION['user_id'])) {
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -66,6 +73,11 @@ if (!isset($_SESSION['user_id'])) {
             opacity: 0.3;
             z-index: -1;
         }
+
+        .card {
+            box-shadow: 0 0px 20px rgba(156, 152, 152, 1);
+        }
+
     </style>
 </head>
 
@@ -76,7 +88,7 @@ if (!isset($_SESSION['user_id'])) {
         class="logo mb-3">
 
     <div class="container d-flex justify-content-center align-items-center" style="height: 100vh; max-width: 900px;">
-        <div class="card bg-secondary w-100" style="max-width: 500px;">
+        <div class="card bg-dark w-100" style="max-width: 500px;">
             <div class="card-body p-4">
                 <h1>จองคิวที่ <?php echo htmlspecialchars($branch); ?></h1>
                 <form action="reservation3.php" method="post">
@@ -114,12 +126,6 @@ if (!isset($_SESSION['user_id'])) {
     </div>
 
     <script>
-        flatpickr("#datepicker", {
-            dateFormat: "Y-m-d",
-            locale: "th",
-            minDate: "today"
-        });
-
         flatpickr("#datepicker", {
             dateFormat: "Y-m-d",
             locale: "th",
