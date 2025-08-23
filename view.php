@@ -1,9 +1,9 @@
 <?php
 session_start();
-if (!isset($_SESSION['user_id'])) {
-    header("Location: signin.php");
-    exit();
-}
+// if (!isset($_SESSION['user_id'])) {
+//     header("Location: signin.php");
+//     exit();
+// }
 
 // ถ้าเป็นระบบแอดมิน เพิ่มเงื่อนไขสิทธิ์
 // if ($_SESSION['role'] !== 'admin') {

@@ -1,9 +1,10 @@
 <?php
+$page = 'reservation';
 session_start();
-if (!isset($_SESSION['user_id'])) {
-    header("Location: signin.php");
-    exit();
-}
+// if (!isset($_SESSION['user_id'])) {
+//     header("Location: signin.php");
+//     exit();
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">

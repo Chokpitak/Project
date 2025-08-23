@@ -1,0 +1,30 @@
+.card {
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+        }
+        .form-label {
+            font-weight: 500;
+        }
+        .bg-secondary {
+            background: rgba(60,60,60,0.85) !important;
+        }
+        .btn-dark {
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        .input-group-text {
+            background: #212529;
+            color: #fff;
+            border: none;
+        }
+        .form-control:focus {
+            box-shadow: 0 0 0 0.2rem #21252933;
+        }
+        .icon {
+            margin-right: 8px;
+        }
+
+        body{
+            font-family: "Mitr", sans-serif;
+        }

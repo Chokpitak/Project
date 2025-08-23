@@ -15,38 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        .card {
-            border-radius: 20px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.15);
-        }
-        .form-label {
-            font-weight: 500;
-        }
-        .bg-secondary {
-            background: rgba(60,60,60,0.85) !important;
-        }
-        .btn-dark {
-            font-size: 1.1rem;
-            font-weight: 500;
-            letter-spacing: 1px;
-        }
-        .input-group-text {
-            background: #212529;
-            color: #fff;
-            border: none;
-        }
-        .form-control:focus {
-            box-shadow: 0 0 0 0.2rem #21252933;
-        }
-        .icon {
-            margin-right: 8px;
-        }
-
-        body{
-            font-family: "Mitr", sans-serif;
-        }
-    </style>
+    <link rel="stylesheet" href="./assets/css/signup.css">
 </head>
 
 <body style="background-image: url('https://cdn.pixabay.com/photo/2021/11/15/11/00/barber-shop-6797761_1280.jpg'); background-size: cover; background-position: center;">
