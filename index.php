@@ -1,4 +1,5 @@
 <?php
+$page = 'index';
 session_start();
 if (!isset($_SESSION['user_id'])) {
     header("Location: signin.php");
@@ -8,7 +9,6 @@ if (!isset($_SESSION['user_id'])) {
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -80,7 +80,7 @@ if (!isset($_SESSION['user_id'])) {
     <section class="hero text-white text-center py-5 ">
         <div class="container h-100 d-flex flex-column  ">
             <h1>ยินดีตอนรับสู่เว็บไซต์ของเรา</h1>
-            <p>โชคพิทักษ์ Big boss Barber</p>
+            <p>Big Boss Barber</p>
         </div>
     </section>
     <?php include './components/header.php'; ?>
@@ -119,5 +119,4 @@ if (!isset($_SESSION['user_id'])) {
         <?php endif; ?>
     </script>
 </body>
-
 </html>
