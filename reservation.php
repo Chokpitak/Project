@@ -15,6 +15,7 @@ if (!isset($_SESSION['user_id'])) {
     <!-- Bootstrap 5 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- SweetAlert2 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -38,6 +39,7 @@ if (!isset($_SESSION['user_id'])) {
         table {
             width: 100%;
             border-collapse: collapse;
+            box-shadow: 0 0px 20px rgba(156, 152, 152, 1);
         }
 
         th, td {
@@ -118,21 +120,25 @@ if (!isset($_SESSION['user_id'])) {
         <tbody class="bg-dark">
             <tr>
                 <td><img src="https://tse3.mm.bing.net/th/id/OIP.fiNpFCdJGgj7TrwjKeslSQHaFt?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Profile"></td>
-                <td>หัวกรวยสาขาสามแยกกระจับ</td>
-                <td><a href="reservation2.php?branch=หัวกรวยสาขาสามแยกกระจับ"><button class="btn btn-light">จองเลย</button></a></td>
+                <td>Big Boss สาขาสามแยกกระจับ</td>
+                <td><a href="reservation2.php?branch=<?php echo urlencode('Big Boss สาขาสามแยกกระจับ'); ?>">
+<button class="btn btn-light">จองเลย</button></a></td>
             </tr>
             <tr>
                 <td><img src="https://tse2.mm.bing.net/th/id/OIP.wXvnTNRyJMispbUN7TWI1QAAAA?w=404&h=316&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Profile"></td>
-                <td>หัวกรวยสาขามาลัยแมน</td>
-                <td><a href="reservation2.php?branch=หัวกรวยสาขามาลัยแมน"><button class="btn btn-light">จองเลย</button></a></td>
+                <td>Big Boss สาขามาลัยแมน</td>
+                <td><a href="reservation2.php?branch=<?php echo urlencode('Big Boss สาขามาลัยแมน'); ?>">
+<button class="btn btn-light">จองเลย</button></a></td>
             </tr>
             <tr>
                 <td><img src="https://tse2.mm.bing.net/th/id/OIP.FyVXGI_P4VAQhppQzAwnUgHaHa?w=1920&h=1920&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Profile"></td>
-                <td>หัวกรวยสาขาต้นสน</td>
-                <td><a href="reservation2.php?branch=หัวกรวยสาขาต้นสน"><button class="btn btn-light">จองเลย</button></a></td>
+                <td>Big Boss สาขาต้นสน</td>
+                <td><a href="reservation2.php?branch=<?php echo urlencode('Big Boss สาขาสามต้นสน'); ?>">
+<button class="btn btn-light">จองเลย</button></a></td>
             </tr>
         </tbody>
     </table>
+    <br><br>
     </section>
     <?php include './components/footer.php'; ?>
 </body>
