@@ -15,6 +15,7 @@ if (!isset($_SESSION['user_id'])) {
     <!-- Bootstrap 5 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- SweetAlert2 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -40,18 +41,18 @@ if (!isset($_SESSION['user_id'])) {
         }
 
         .product {
-            background-color: rgba(37, 37, 37, 1);
+            background-color: rgba(33,37,41,255);
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 30px;
             width: 200px;
-            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0px 20px rgba(156, 152, 152, 1);
         }
 
         .product img {
             width: 100%;
             height: 250px;
             object-fit: cover;
-            border-radius: 10px;
+            border-radius: 15px;
         }
 
         .product-name {
