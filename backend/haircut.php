@@ -1,0 +1,238 @@
+<?php
+$page = 'haircut';
+session_start();
+// if (!isset($_SESSION['user_id'])) {
+//     header("Location: signin.php");
+//     exit();
+// }
+
+// ถ้าเป็นระบบแอดมิน เพิ่มเงื่อนไขสิทธิ์
+// if ($_SESSION['role'] !== 'admin') {
+//     header("Location: index.php");
+//     exit();
+// }
+
+$host = 'localhost';
+$dbname = 'haircut_db';
+$username = 'root';
+$password = '';
+
+try {
+    $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch(PDOException $e) {
+    die("การเชื่อมต่อฐานข้อมูลล้มเหลว: " . $e->getMessage());
+}
+
+$sql = "SELECT * FROM haircuts ORDER BY created_at DESC";
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+?>
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            text-align: center;
+            padding: 40px;
+            font-family: 'Kanit', sans-serif;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('https://img.freepik.com/premium-photo/professional-barber-tools-laid-out-dark-wooden-surface_93675-163594.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.25;
+            z-index: -1;
+        }
+        .logo {
+            width: 90px;
+            margin: 32px auto 16px auto;
+            display: block;
+            filter: drop-shadow(0 2px 8px #0008);
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffc107;
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 8px #0008;
+        }
+        .user-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 32px;
+            margin-top: 24px;
+        }
+        .user {
+            background: rgba(33,37,41,0.97);
+            padding: 18px 16px 16px 16px;
+            border-radius: 1.5rem;
+            width: 210px;
+            box-shadow: 0 4px 24px 0 rgba(0,0,0,0.18);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 2px solid transparent;
+        }
+        .user:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 8px 32px 0 rgba(255,193,7,0.18);
+            border-color: #ffc107;
+        }
+        .user img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 1rem;
+            box-shadow: 0 2px 12px #0004;
+        }
+        .user-name {
+            margin-top: 14px;
+            font-size: 1.1rem;
+            color: #fff;
+            font-weight: 600;
+            min-height: 2.5em;
+        }
+        .user-price {
+            font-size: 1rem;
+            color: #ffc107;
+            margin-top: 8px;
+            font-weight: 500;
+            line-height: 1.5;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .user-price strong {
+            white-space: nowrap;
+        }
+        .user-info {
+            color: #fff;
+        }
+        @media (max-width: 991.98px) {
+            .user-container {
+                gap: 20px;
+            }
+            .user {
+                width: 45vw;
+                min-width: 170px;
+                max-width: 260px;
+            }
+        }
+        @media (max-width: 576px) {
+            .logo {
+                width: 60px;
+                margin-top: 16px;
+            }
+            h1 {
+                font-size: 1.3rem;
+            }
+            .user-container {
+                gap: 12px;
+            }
+            .user {
+                width: 90vw;
+                min-width: 140px;
+                max-width: 100%;
+                padding: 10px 6px 12px 6px;
+            }
+            .user img {
+                height: 140px;
+            }
+        }
+        .user-divider {
+            border: none;
+            border-top: 1px solid #ffc107;
+            margin: 12px 0;
+        }
+    </style>
+</head>
+<body class="bg-dark">
+    <?php include './components/header.php'; ?>
+    <img src="https://cdn.pixabay.com/photo/2018/01/09/14/24/head-3071690_1280.png"
+        alt="Logo"
+        class="logo mb-3">
+    <section id="fetchUser" class="py-5">
+    <h1>แสดงข้อมูลทรงผม</h1>
+    <a href="add_haircut.php" class="btn btn-success btn-lg mb-4 px-4 py-2">
+        <i class="bi bi-plus-circle me-1"></i> เพิ่มทรงผมใหม่
+    </a>
+    <div class="container">
+        <?php if($stmt->rowCount() > 0) : ?>
+            <div class="user-container">
+                <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
+                    <div class="user">
+                        <img src="/Project-main/assets/imgs/<?= htmlspecialchars($row['profile_image']); ?>" 
+                                         alt="" 
+                                         class="rounded-5 mb-3"
+                                         style="width: 100%; max-height: 200px; object-fit: cover;">  
+                        <div class="user-name">
+                            <?php echo htmlspecialchars($row['name']); ?>
+                        </div>
+                        <div class="user-price"><strong>ราคา:</strong> <div class="user-info"><?php echo htmlspecialchars($row['price']); ?></div></div>
+                        <hr class="user-divider">
+                        <div><strong><a href="edit_haircut.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i></a>
+                        <button class="btn btn-sm btn-danger" onclick="confirmDelete(<?= $row['id'] ?>)"><i class="bi bi-trash"></i></button>
+                        <script>
+                                    function confirmDelete(id) {
+                                        Swal.fire({
+                                            title: 'คุณแน่ใจหรือไม่?',
+                                            text: "คุณต้องการลบรายการนี้หรือไม่?",
+                                            icon: 'warning',
+                                            showCancelButton: true,
+                                            confirmButtonText: 'ใช่!',
+                                            cancelButtonText: 'ยกเลิก'
+                                        }).then((result) => {
+                                            if (result.isConfirmed) {
+                                            window.location.href =`controls/delete_haircut.php?id=${id}`;
+                                            }
+                                        });
+                                    }
+                        </script></strong></div>
+                    </div>
+                <?php } ?>
+            </div>
+        <?php endif ?>
+    </div>
+</section>
+<?php if(isset($_SESSION['success'])) : ?>
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'สำเร็จ',
+        text: '<?= $_SESSION['success']; ?>',
+        confirmButtonText: 'ตกลง'
+    });
+</script>
+<?php unset($_SESSION['success']); endif; ?>
+<?php if(isset($_SESSION['error'])) : ?>
+<script>
+    Swal.fire({
+        icon: 'error',
+        title: 'ผิดพลาด',
+        text: '<?= $_SESSION['error']; ?>',
+        confirmButtonText: 'ตกลง'
+    });
+</script>
+<?php unset($_SESSION['error']); endif; ?>
+</body>
+</html>
