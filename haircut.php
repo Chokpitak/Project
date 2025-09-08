@@ -343,7 +343,7 @@ $stmt->execute();
                 padding: 10px 6px 12px 6px;
             }
             .user img {
-                height: 140px;
+                heigght: 140px;
             }
         }
     </style>
