@@ -1,3 +1,4 @@
+<?php
 CREATE TABLE IF NOT EXISTS reservations (
     id INT AUTO_INCREMENT PRIMARY KEY,
     branch VARCHAR(255) NOT NULL,
@@ -7,14 +8,4 @@ CREATE TABLE IF NOT EXISTS reservations (
     time TIME NOT NULL,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
-=======
-CREATE TABLE IF NOT EXISTS reservations (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    branch VARCHAR(255) NOT NULL,
-    fullname VARCHAR(100) NOT NULL,
-    phone VARCHAR(20) NOT NULL,
-    date DATE NOT NULL,
-    time TIME NOT NULL,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-);
->>>>>>> fc641ee (update project)
+?>
