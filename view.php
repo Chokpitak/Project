@@ -1,15 +1,15 @@
 <?php
 $page = 'view';
-session_start();
- if (!isset($_SESSION['user_id'])) {
-     header("Location: signin.php");
-     exit();
- }
+// session_start();
+//  if (!isset($_SESSION['user_id'])) {
+//      header("Location: signin.php");
+//      exit();
+//  }
 
- if ($_SESSION['role'] !== 'admin') {
-     header("Location: index.php");
-     exit();
- }
+//  if ($_SESSION['role'] !== 'admin') {
+//      header("Location: index.php");
+//      exit();
+//  }
 
 // เชื่อมต่อฐานข้อมูล
 $servername = "localhost";

@@ -1,11 +1,11 @@
 <?php
 $page = 'haircut';
-session_start();
+// session_start();
 
- if (!isset($_SESSION['user_id'])) {
-     header("Location: signin.php");
-     exit();
- }
+//  if (!isset($_SESSION['user_id'])) {
+//      header("Location: signin.php");
+//      exit();
+//  }
 
 $host = 'localhost';
 $dbname = 'haircut_db';  // ตรวจสอบว่าถูกต้องหรือไม่

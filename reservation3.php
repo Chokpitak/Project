@@ -1,17 +1,17 @@
 <?php
 $page = 'reservation';
-session_start();
- if (!isset($_SESSION['user_id'])) {
-     header("Location: signin.php");
-     exit();
- }
+// session_start();
+//  if (!isset($_SESSION['user_id'])) {
+//      header("Location: signin.php");
+//      exit();
+//  }
 
-if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    echo "<script>
-        window.location.href = 'index.php';
-    </script>";
-    exit;
-}
+// if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+//     echo "<script>
+//         window.location.href = 'index.php';
+//     </script>";
+//     exit;
+// }
 
 $branch   = $_POST['branch'] ?? '';
 $fullname = trim($_POST['fullname'] ?? '');

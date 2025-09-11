@@ -1,17 +1,17 @@
 <?php
 $page = 'reservation';
-session_start();
-date_default_timezone_set('Asia/Bangkok');
+// session_start();
+// date_default_timezone_set('Asia/Bangkok');
 
- if (!isset($_SESSION['user_id'])) {
-     header("Location: signin.php");
-     exit();
- }
+//  if (!isset($_SESSION['user_id'])) {
+//      header("Location: signin.php");
+//      exit();
+//  }
 
-if (!isset($_GET['branch'])) {
-    header("Location: reservation1.php");
-    exit();
-}
+// if (!isset($_GET['branch'])) {
+//     header("Location: reservation1.php");
+//     exit();
+// }
 
 $branch = $_GET['branch'];
 
