@@ -17,8 +17,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/signup.css">
 </head>
+<style>
+.custom-back-btn {
+    color: white;
+    border-color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
 
+.custom-back-btn:hover {
+    color: #e63946;
+    border-color: #e63946;
+}
+</style>
 <body style="background-image: url('https://cdn.pixabay.com/photo/2021/11/15/11/00/barber-shop-6797761_1280.jpg'); background-size: cover; background-position: center;">
+    <a href="index.php" class="btn custom-back-btn position-absolute top-0 end-0 m-3">
+        <i class="bi bi-backspace-fill"></i>
+    </a>
     <div class="container d-flex justify-content-center align-items-center" style="height: 100vh; max-width: 900px;">
         <div class="card bg-secondary text-white" style="width: 50%;">
             <div class="row g-0">
@@ -69,7 +85,7 @@
                     </form>
                     <div class="text-center mt-4">
                         <span>มีบัญชีอยู่แล้ว?</span>
-                        <a href="signin.php" class="text-warning text-decoration-underline">เข้าสู่ระบบ</a>
+                        <a href="signin.php" class="text-danger text-decoration-underline">เข้าสู่ระบบ</a>
                     </div>
                 </div>
             </div>

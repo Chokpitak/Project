@@ -1,10 +1,10 @@
 <?php
 $page = 'index';
 session_start();
-//if (!isset($_SESSION['user_id'])) {
-//     header("Location: signin.php");
-//     exit();
-// }
+if (!isset($_SESSION['user_id'])) {
+     header("Location: index.php");
+     exit();
+ }
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +12,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Information Website</title>
+    <title>หน้าหลัก(หลังบ้าน) | Big Boss Barber</title>
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -79,16 +79,33 @@ session_start();
                 font-size: 1rem;
             }
         }
+        .custom-back-btn {
+            color: white;
+            border: 2px solid white;
+            background-color: transparent;
+            transition: 0.3s ease;
+        }
+
+        .custom-back-btn:hover,
+        .custom-back-btn:focus {
+            color: #000;
+            background-color: #ffc107;
+            border-color: #ffc107;
+        }
+
     </style>
 </head>
 <body class="d-flex flex-column justify-content-center align-items-center min-vh-100 text-center">
+    <a href="../index.php" class="btn custom-back-btn position-absolute top-0 end-0 m-3">
+        <i class="bi bi-backspace-fill"></i>
+    </a>
     <img src="https://cdn.pixabay.com/photo/2018/01/09/14/24/head-3071690_1280.png"
         alt="Logo"
         class="logo mb-3 img-fluid">
 
     <section class="hero text-white text-center py-4 w-100">
         <div class="container d-flex flex-column align-items-center justify-content-center">
-            <h1>สำหรับ Admin</h1>
+            <h1>Admin Panal</h1>
             <p>Big Boss Barber</p>
         </div>
     </section>

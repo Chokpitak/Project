@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>รายการจองคิว</title>
+    <title>เพิ่มข้อมูลทรงผม | Big Boss Barber</title>
     <!-- Bootstrap 5 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
@@ -33,7 +33,6 @@
             background-position: center;
             background-repeat: no-repeat;
             opacity: 0.3;
-            /* 👈 ปรับค่าตามความจางที่ต้องการ */
             z-index: -1;
         }
 

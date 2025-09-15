@@ -1,13 +1,12 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark   py-2">
   <div class="container-fluid">
-    
-    <!-- Hamburger -->
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
       aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <!-- Menu -->
+
     <div class="collapse navbar-collapse" id="mainNavbar">
       <ul class="navbar-nav text-center mx-auto mb-2 mb-lg-0">
         <li class="nav-item">
@@ -19,7 +18,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link px-3 <?php if($page=='view') echo 'active text-warning'; ?>" href="../backend/view.php">
-            <i class="bi bi-geo-alt"></i> จัดการข้อมูลการจอง</a>
+            <i class="bi bi-calendar-check"></i> จัดการข้อมูลการจอง</a>
         </li>
         <li class="nav-item">
           <a class="nav-link px-3 <?php if($page=='user') echo 'active text-warning'; ?>" href="../backend/user.php">

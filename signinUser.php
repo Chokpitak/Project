@@ -19,6 +19,7 @@
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['email'] = $user['email'];
                 $_SESSION['name'] = $user['first_name'] . " " . $user['last_name'];
+                $_SESSION['phone'] = $user['phone'];
                 $_SESSION['role'] = $user['role'];
                 header("Location: ../index.php?success=true");
                 echo "SignIn Success";
@@ -28,6 +29,7 @@
             }
         } else {
             header("Location: ../signin.php?error=invalid");
+            exit();
         }
     }
 ?>

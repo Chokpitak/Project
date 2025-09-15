@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>รายการจองคิว</title>
+    <title>แก้ไขข้อมูลผู้ใช้ | Big Boss Barber</title>
     <!-- Bootstrap 5 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
@@ -33,7 +33,6 @@
             background-position: center;
             background-repeat: no-repeat;
             opacity: 0.3;
-            /* 👈 ปรับค่าตามความจางที่ต้องการ */
             z-index: -1;
         }
 
@@ -96,23 +95,30 @@
                 </div>
             </div>
             <div class="mb-3">
-                <label for="">ชื่อ-นามสกุล</label>
+                <label for="">ชื่อ</label>
                 <div class="input-group">
                     <span class="input-group-text"><i class="bi bi-person"></i></span>
-                    <input type="text" name="first_name" name="last_name" class="form-control" value="<?php echo htmlspecialchars($user['first_name']) . " " . htmlspecialchars($user['last_name']); ?>">
+                    <input type="text" name="first_name" id="first_name" class="form-control" value="<?= htmlspecialchars($user['first_name']); ?>">
                 </div>
             </div>
             <div class="mb-3">
-                <label for="">อีเมล์</label>
+                <label for="">นามสกุล</label>
                 <div class="input-group">
                     <span class="input-group-text"><i class="bi bi-person"></i></span>
+                    <input type="text" name="last_name" id="last_name" class="form-control" value="<?= htmlspecialchars($user['last_name']); ?>">
+                </div>
+            </div>        
+            <div class="mb-3">
+                <label for="">อีเมล์</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-envelope"></i></span>
                     <input type="text" name="email" class="form-control" value="<?= htmlspecialchars($user['email']); ?>">
                 </div>
             </div>
             <div class="mb-3">
                 <label for="">เบอร์โทรศัพท์</label>
                 <div class="input-group">
-                    <span class="input-group-text"><i class="bi bi-person"></i></span>
+                    <span class="input-group-text"><i class="bi bi-telephone"></i></span>
                     <input type="text" name="phone" class="form-control" value="<?= htmlspecialchars($user['phone']); ?>">
                 </div>
             </div>

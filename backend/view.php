@@ -1,17 +1,10 @@
 <?php
 $page = 'view';
 session_start();
-// if (!isset($_SESSION['user_id'])) {
-//     header("Location: signin.php");
-//     exit();
-// }
-
-// ถ้าเป็นระบบแอดมิน เพิ่มเงื่อนไขสิทธิ์
-// if ($_SESSION['role'] !== 'admin') {
-//     header("Location: index.php");
-//     exit();
-// }
-
+ if (!isset($_SESSION['user_id'])) {
+     header("Location: index.php");
+     exit();
+}
 // เชื่อมต่อฐานข้อมูล
 $servername = "localhost";
 $username = "root";          // แก้ตามของคุณ
@@ -33,7 +26,7 @@ $result = $conn->query($sql);
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>รายการจองคิว</title>
+    <title>รายการคิว | Big Boss Barber</title>
     <!-- Bootstrap 5 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
@@ -116,7 +109,6 @@ $result = $conn->query($sql);
             background-position: center;
             background-repeat: no-repeat;
             opacity: 0.3;
-            /* 👈 ปรับค่าตามความจางที่ต้องการ */
             z-index: -1;
         }
 
@@ -222,7 +214,7 @@ $result = $conn->query($sql);
 <?php endwhile; ?>
 
                 <?php else: ?>
-                    <tr><td colspan="6" class="text-center">ยังไม่มีการจองคิว</td></tr>
+                    <tr><td colspan="8" class="text-center">ยังไม่มีการจองคิว</td></tr>
                 <?php endif; ?>
             </tbody>
         </table>
