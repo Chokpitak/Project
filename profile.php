@@ -134,10 +134,10 @@ if (!$user) {
 <?php include './components/header.php'; ?>
 
 <div class="profile-card">
-    <img src="<?= !empty($user['profile_image']) ? htmlspecialchars('/Project-master/assets/imgs/' . $user['profile_image']) : 'https://via.placeholder.com/150' ?>" alt="Profile_Image" class="profile-image">
-    <div class="profile-name"><?= htmlspecialchars($user['first_name'] . ' ' . $user['last_name']) ?></div>
-    <div class="profile-detail"><i class="bi bi-envelope"> อีเมล์: </i> <?= htmlspecialchars($user['email']) ?></div>
-    <div class="profile-detail"><i class="bi bi-telephone"> เบอร์โทรศัพท์: </i> <?= htmlspecialchars($user['phone']) ?></div>
+    <img src="<?= !empty($user['profile_image']) ? htmlspecialchars('/Project-main/assets/imgs/' . $user['profile_image']) : 'https://via.placeholder.com/150' ?>" alt="Profile_Image" class="profile-image">
+    <div class="profile-name"><?= htmlspecialchars($user['first_name'] . ' ' . $user['last_name']) ?></div><br>
+    <div class="profile-detail"><i class="bi bi-envelope"> อีเมล์: </i> <?= htmlspecialchars($user['email']) ?></div><br>
+    <div class="profile-detail"><i class="bi bi-telephone"> เบอร์โทรศัพท์: </i> <?= htmlspecialchars($user['phone']) ?></div><br>
     <div class="profile-detail"><i class="bi bi-calendar3"> วันที่สมัครบัญชี: </i> <?= htmlspecialchars($user['created_at']) ?></div>
 
     <div class="profile-actions">
