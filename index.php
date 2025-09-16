@@ -491,7 +491,7 @@ $stmt->execute();
                 <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
                     <div class="col-6 col-md-3">
                         <div class="product">
-                            <img src="/Project-main/assets/imgs/<?= htmlspecialchars($row['profile_image']); ?>" 
+                            <img src="/Project/assets/imgs/<?= htmlspecialchars($row['profile_image']); ?>" 
                                  alt="<?= htmlspecialchars($row['name']); ?>" 
                                  class="rounded-5 mb-3"
                                  style="width: 100%; max-height: 200px; object-fit: cover;">
