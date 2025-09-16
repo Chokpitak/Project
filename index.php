@@ -422,7 +422,8 @@ $stmt->execute();
 }
 
 .logo {
-            width: 90px;
+            width: 200px;
+            height: 200px;
             margin: 32px auto 16px auto;
             display: block;
             filter: drop-shadow(0 2px 8px #0008);
@@ -435,7 +436,7 @@ $stmt->execute();
     <div class="hero-bg">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-        <img src="https://cdn.pixabay.com/photo/2018/01/09/14/24/head-3071690_1280.png"
+        <img src="./assets/imgs/โลโก้กรรไกรในรูปแบบมินิมอล-removebg-preview.png"
         alt="Logo"
         class="logo mb-3">
             <h1>ยินดีต้อนรับสู่ Big Boss Barber</h1>
