@@ -101,7 +101,7 @@ if (!preg_match('/^[0-9]{10}$/', $phone)) {
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname   = "barber_db";
+$dbname   = "it48";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
