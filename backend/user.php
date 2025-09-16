@@ -50,7 +50,7 @@ $stmt->execute();
             left: 0;
             width: 100vw;
             height: 100vh;
-            background-image: url('https://img.freepik.com/premium-photo/professional-barber-tools-laid-out-dark-wooden-surface_93675-163594.jpg');
+            background-image: url('https://cdn.pixabay.com/photo/2019/02/25/13/38/haircut-4019676_1280.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -66,7 +66,7 @@ $stmt->execute();
         h1 {
             font-size: 2.5rem;
             font-weight: 700;
-            color: #ffc107;
+            color: #fff;
             margin-bottom: 2rem;
             letter-spacing: 1px;
             text-shadow: 0 2px 8px #0008;
@@ -89,8 +89,8 @@ $stmt->execute();
         }
         .user:hover {
             transform: translateY(-8px) scale(1.03);
-            box-shadow: 0 8px 32px 0 rgba(255,193,7,0.18);
-            border-color: #ffc107;
+            box-shadow: 0 8px 32px 0 rgba(255, 7, 7, 0.18);
+            border-color: #e63946;
         }
         .user img {
             width: 100%;
@@ -108,7 +108,7 @@ $stmt->execute();
         }
         .user-price {
             font-size: 1rem;
-            color: #ffc107;
+            color: #e63946;
             margin-top: 8px;
             font-weight: 500;
             line-height: 1.5;
@@ -155,16 +155,14 @@ $stmt->execute();
         }
         .user-divider {
             border: none;
-            border-top: 1px solid #ffc107;
+            border-top: 1px solid #e63946;
             margin: 12px 0;
         }
     </style>
 </head>
 <body class="bg-dark">
     <?php include './components/header.php'; ?>
-    <img src="https://cdn.pixabay.com/photo/2018/01/09/14/24/head-3071690_1280.png"
-        alt="Logo"
-        class="logo mb-3">
+    
     <section id="fetchUser" class="py-5">
     <h1>แสดงข้อมูลผู้ใช้งาน</h1>
     <div class="container">

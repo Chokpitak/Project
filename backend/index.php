@@ -39,16 +39,12 @@ if (!isset($_SESSION['user_id'])) {
             left: 0;
             width: 100vw;
             height: 100vh;
-            background-image: url('https://cdn.pixabay.com/photo/2020/05/24/02/00/barber-shop-5212059_1280.jpg');
+            background-image: url('https://cdn.pixabay.com/photo/2019/02/25/13/38/haircut-4019676_1280.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             opacity: 0.3;
             z-index: -1;
-        }
-        .logo {
-            width: 150px;
-            max-width: 40vw;
         }
         h1 {
             font-size: 4rem;
@@ -89,24 +85,23 @@ if (!isset($_SESSION['user_id'])) {
         .custom-back-btn:hover,
         .custom-back-btn:focus {
             color: #000;
-            background-color: #ffc107;
-            border-color: #ffc107;
+            background-color: #e63946;
+            border-color: #e63946;
         }
 
     </style>
 </head>
-<body class="d-flex flex-column justify-content-center align-items-center min-vh-100 text-center">
+<body>
+    <?php include '../backend/components/header.php'; ?>
+
+    <div class="d-flex flex-column justify-content-center align-items-center min-vh-100 text-center">
     <a href="../index.php" class="btn custom-back-btn position-absolute top-0 end-0 m-3">
         <i class="bi bi-backspace-fill"></i>
     </a>
-    <img src="https://cdn.pixabay.com/photo/2018/01/09/14/24/head-3071690_1280.png"
-        alt="Logo"
-        class="logo mb-3 img-fluid">
-
     <section class="hero text-white text-center py-4 w-100">
         <div class="container d-flex flex-column align-items-center justify-content-center">
             <h1>Admin Panal</h1>
             <p>Big Boss Barber</p>
         </div>
     </section>
-    <?php include '../backend/components/header.php'; ?>
+    </div>

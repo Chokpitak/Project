@@ -203,7 +203,7 @@ $pendingReservation = $stmtCheck->fetch(PDO::FETCH_ASSOC);
                         <i class="bi bi-exclamation-triangle-fill"></i>
                         คุณมีการจองที่กำลัง <strong>รอดำเนินการ</strong> อยู่ กรุณารอให้ดำเนินการเสร็จสิ้นก่อนทำการจองใหม่
                     </div>
-                    <a href="view.php" class="btn btn-light w-100 mt-2">
+                    <a href="view.php" class="btn btn-light w-100 mt-2"> 
                         <i class="bi bi-eye"></i> ดูสถานะการจอง
                     </a>
                 <?php else: ?>
@@ -269,6 +269,7 @@ $pendingReservation = $stmtCheck->fetch(PDO::FETCH_ASSOC);
             minTime: "09:00",
             maxTime: "20:00",
             locale: "th",
+            minuteIncrement: 30,
         });
     </script>
     <?php include './components/footer.php'; ?>
