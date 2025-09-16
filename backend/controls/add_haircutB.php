@@ -1,5 +1,5 @@
 <?php
-include 'db3.php';
+include 'db2.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];

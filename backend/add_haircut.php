@@ -121,6 +121,29 @@
         const fileName = this.files[0]?.name || "ยังไม่ได้เลือกไฟล์";
         document.getElementById('fileLabel').innerText = fileName;
     });
+
+    <?php if(isset($_SESSION['success'])) : ?>
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'สำเร็จ',
+        text: '<?= $_SESSION['success']; ?>',
+        confirmButtonText: 'ตกลง'
+    });
+</script>
+<?php unset($_SESSION['success']); endif; ?>
+
+<?php if(isset($_SESSION['error'])) : ?>
+<script>
+    Swal.fire({
+        icon: 'error',
+        title: 'ผิดพลาด',
+        text: '<?= $_SESSION['error']; ?>',
+        confirmButtonText: 'ตกลง'
+    });
+</script>
+<?php unset($_SESSION['error']); endif; ?>
+
 </script>
 </body>
 </html>

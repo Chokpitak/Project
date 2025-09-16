@@ -134,7 +134,7 @@ if (!$user) {
 <?php include './components/header.php'; ?>
 
 <div class="profile-card">
-    <img src="<?= !empty($user['profile_image']) ? htmlspecialchars('/Project-main/assets/imgs/' . $user['profile_image']) : 'https://via.placeholder.com/150' ?>" alt="Profile_Image" class="profile-image">
+    <img src="<?= !empty($user['profile_image']) ? htmlspecialchars('/Project/assets/imgs/' . $user['profile_image']) : 'https://via.placeholder.com/150' ?>" alt="Profile_Image" class="profile-image">
     <div class="profile-name"><?= htmlspecialchars($user['first_name'] . ' ' . $user['last_name']) ?></div><br>
     <div class="profile-detail"><i class="bi bi-envelope"> อีเมล์: </i> <?= htmlspecialchars($user['email']) ?></div><br>
     <div class="profile-detail"><i class="bi bi-telephone"> เบอร์โทรศัพท์: </i> <?= htmlspecialchars($user['phone']) ?></div><br>

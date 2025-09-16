@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db1.php';
+include 'db2.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_POST['id'];

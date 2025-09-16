@@ -1,5 +1,5 @@
 <?php
-    include 'db1.php';
+    include 'db2.php';
 
     // ดีงข้อมูลผู้ใช้งานตามไอดี
     $id = $_GET['id'];

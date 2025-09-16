@@ -6,7 +6,7 @@ if (!isset($_SESSION['user_id'])) {
      exit();
 }
 $host = 'localhost';
-$dbname = 'haircut_db';
+$dbname = 'it48';
 $username = 'root';
 $password = '';
 
@@ -172,7 +172,7 @@ $stmt->execute();
             <div class="user-container">
                 <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
                     <div class="user">
-                        <img src="/Project-main/assets/imgs/<?= htmlspecialchars($row['profile_image']); ?>" 
+                        <img src="/Project/assets/imgs/<?= htmlspecialchars($row['profile_image']); ?>" 
                                          alt="" 
                                          class="rounded-5 mb-3"
                                          style="width: 100%; max-height: 200px; object-fit: cover;">  

@@ -6,7 +6,7 @@ session_start();
 //     exit();
 // }
 $host = 'localhost';
-$dbname = 'haircut_db';  // ตรวจสอบว่าถูกต้องหรือไม่
+$dbname = 'it48';  // ตรวจสอบว่าถูกต้องหรือไม่
 $username = 'root';
 $password = '';
 

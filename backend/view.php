@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname   = "barber_db";
+$dbname   = "it48";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
@@ -40,19 +40,19 @@ $result = $conn->query($sql);
         padding: 0;
     }
     body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-image: url('https://cdn.pixabay.com/photo/2019/02/25/13/38/haircut-4019676_1280.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            opacity: 0.3;
-            z-index: -1;
-        }
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-image: url('https://cdn.pixabay.com/photo/2019/02/25/13/38/haircut-4019676_1280.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.3;
+        z-index: -1;
+    }
 
     h1 {
         font-size: 2.3rem;
@@ -62,7 +62,6 @@ $result = $conn->query($sql);
         margin: 30px 0 20px;
     }
 
-    /* กล่องตารางตรงกลาง */
     .table-wrapper {
         display: flex;
         justify-content: center;
@@ -107,21 +106,22 @@ $result = $conn->query($sql);
     }
 
     /* สีของ select ตามสถานะ */
-    .status-done select { background-color: #28a745 !important; color: #fff; }
-    .status-wait select { background-color: #fff !important; color: #000; }
-    .status-cancle select { background-color: #dc3545 !important; color: #fff; }
+    .status-done select.form-select, .status-done select.form-select-sm { background-color: #28a745 !important; color: #fff !important; }
+    .status-wait select.form-select, .status-wait select.form-select-sm { background-color: #fbf70a !important; color: #000 !important; }
+    .status-cancle select.form-select, .status-cancle select.form-select-sm { background-color: #dc3545 !important; color: #fff !important; }
 
-    select.form-select {
+    select.form-select, select.form-select-sm {
         border-radius: 10px;
         font-weight: bold;
         min-width: 140px;
         text-align: center;
+        transition: background 0.2s, color 0.2s;
     }
 
     .btn-warning, .btn-danger, .btn-success {
         border-radius: 10px;
     }
-</style>
+    </style>
 
 </head>
 
