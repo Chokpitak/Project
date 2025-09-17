@@ -436,7 +436,7 @@ $stmt->execute();
     <div class="hero-bg">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-        <img src="./assets/imgs/โลโก้กรรไกรในรูปแบบมินิมอล-removebg-preview.png"
+        <img src="./assets/imgs/Logo.png"
         alt="Logo"
         class="logo mb-3">
             <h1>ยินดีต้อนรับสู่ Big Boss Barber</h1>
